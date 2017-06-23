@@ -3,6 +3,7 @@
 <head>
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <script src='third_party/jquery.min.js'></script>
+  <link rel="stylesheet" href="third_party/font-awesome/css/font-awesome.min.css">
   <script src='popup.js'></script>
 
   <style>
@@ -16,7 +17,6 @@
 
     body {
       width: 400px;
-      min-height: 200px;
       border-radius: 5px;
       margin: 0;
       padding: 0;
@@ -105,6 +105,68 @@
       box-sizing: border-box;
     }
 
+    #article-summary {
+      width: 100%;
+      padding: 8px;
+      background-color: rgb(245,245,245);
+      box-sizing: border-box;
+    }
+
+    #article-readers-eval {
+      float: left;
+    }
+
+    #article-readers-eval i {
+      font-size: 16px;
+      color: rgb(255,153,0);
+      margin-top: 5px;
+    }
+
+    #article-verdict {
+      float: right;
+      text-align: right;
+    }
+
+    #article-verdict i {
+      font-size: 16px;
+      margin-top: 5px;
+    }
+
+     #article-verdict i.fa-shield {
+      color: rgb(51,102,0);
+     }
+     #article-verdict i.fa-exclamation-triangle{
+      color: rgb(255,153,0);
+     }
+     #article-verdict i.fa-hand-paper-o {
+      color: rgb(255,0,0);
+     }
+
+     #article-verdict .verdict-text {
+      font-size: 16px;
+     }
+
+     #article-verdict .verdict-text.trustable {
+      color: rgb(51,102,0);
+     }
+     #article-verdict .verdict-text.caution {
+      color: rgb(255,153,0);
+     }
+     #article-verdict .verdict-text.do-not-trust {
+      color: rgb(255,0,0);
+     }
+
+     #article-verdict-explanation {
+      width: 100%;
+      text-align: center;
+      padding-top: 8px;
+      font-size: 12px;
+     }
+
+    .clear {
+      clear: both;
+    }
+
   </style>
 
 </head>
@@ -119,6 +181,24 @@
       </div>
       <div id='article-description'>
         Description provided by the website in their meta-data. This is the meta-data that facebook uses. Description provided by the website in their meta-data. This is the meta-data that facebook uses. Description provided by the website in their meta-data. This is the meta-data that facebook uses.
+      </div>
+      <div id='article-summary'>
+        <div id = 'article-readers-eval'>
+        <div style = 'font-size: 13px'><b>Readers'</b> Evaluation: 4/5</div>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star-o" aria-hidden="true"></i>
+        </div>
+        <div id = 'article-verdict'>
+          <div style = 'font-size: 13px'><b>Newbie's</b> Ranking:</div>
+          <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <span class = 'verdict-text caution'>CAUTION</span>
+        </div>
+        <div class = 'clear'></div>
+        <div id = 'article-verdict-explanation'>
+          Based on XYZ reviews and Newbie's algorithm, we advise you to read carefully and not to trust blindly this article.
+        </div>
       </div>
     </div>
     <div id='not-available'>
