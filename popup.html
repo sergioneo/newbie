@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html style=''>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <script src='third_party/jquery.min.js'></script>
+  <script src='popup.js'></script>
+
+  <style>
+
+    html {
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+      font-family: Lato;
+    }
+
+    body {
+      width: 400px;
+      min-height: 200px;
+      border-radius: 5px;
+      margin: 0;
+      padding: 0;
+      font-family: Lato;
+    }
+
+    a {color: #0575E6;}
+  
+    .topbar {
+      width: 100%;
+      background: #0575E6;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to top, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to top, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+      color: white;
+      text-align: center;
+      font-size: 16px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    #message {
+      min-height: 150px;
+      box-sizing: border-box;
+    }
+
+    #message #overview {display: none;}
+    #message #not-available {display: none; text-align: center; vertical-align: middle; font-size: 16px; padding-top: 50px;}
+    #message #not-available a {text-decoration: none; outline: none;}
+    #message #not-available a:hover {text-decoration: underline;}
+
+    .bottombar {
+      width: 100%;
+      background: rgb(230,230,230);
+      text-align: center;
+      font-size: 12px;
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+
+    #article-img {
+      min-height: 80px;
+      padding-top: 20px;
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+100 */
+      position: relative;
+      background-image: url("cover.jpg");
+      background-position: center center;
+      background-size: cover;
+      z-index: 1;
+    }
+
+    #article-img:before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+    }
+
+    #article-title {
+      font-size: 20px;
+      color: white;
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      box-sizing: border-box;
+      padding-left: 8px;
+      padding-right: 8px;
+      text-align: right;
+      margin-bottom: 5px;
+    }
+
+    #article-description {
+      padding-top: 5px;
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-bottom: 8px;
+      font-size: 13px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+  </style>
+
+</head>
+<body>
+  <div class = 'topbar'>
+    NEWBIE
+  </div>
+  <div id='message'>
+    <div id='overview'>
+      <div id='article-img'>
+        <h1 id="article-title">TITULO ORIGINAL DE LA NOTICIA</h1>
+      </div>
+      <div id='article-description'>
+        Description provided by the website in their meta-data. This is the meta-data that facebook uses. Description provided by the website in their meta-data. This is the meta-data that facebook uses. Description provided by the website in their meta-data. This is the meta-data that facebook uses.
+      </div>
+    </div>
+    <div id='not-available'>
+
+    </div>
+  </div>
+  <div class = 'bottombar'>
+    Find out more
+  </div>
+</body>
+</html>
