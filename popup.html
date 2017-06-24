@@ -107,13 +107,15 @@
 
     #article-summary {
       width: 100%;
-      padding: 8px;
       background-color: rgb(245,245,245);
       box-sizing: border-box;
     }
 
     #article-readers-eval {
       float: left;
+      padding-left: 8px;
+      padding-top: 8px;
+      padding-bottom: 8px;
     }
 
     #article-readers-eval i {
@@ -124,23 +126,19 @@
 
     #article-verdict {
       float: right;
-      text-align: right;
+      text-align: center;
+      height: 114px;
+      padding: 8px;
+      width: 140px;
+      color: white;
+      font-size: 16px;
     }
 
     #article-verdict i {
-      font-size: 16px;
+      font-size: 22px;
       margin-top: 5px;
+      margin-bottom: 5px;
     }
-
-     #article-verdict i.fa-shield {
-      color: rgb(51,102,0);
-     }
-     #article-verdict i.fa-exclamation-triangle{
-      color: rgb(255,153,0);
-     }
-     #article-verdict i.fa-hand-paper-o {
-      color: rgb(255,0,0);
-     }
 
      #article-verdict .verdict-text {
       font-size: 16px;
@@ -156,10 +154,21 @@
       color: rgb(255,0,0);
      }
 
+     #article-verdict.trustable {
+      background-color: rgb(51,102,0);
+     }
+     #article-verdict.caution {
+      background-color: rgb(255,153,0);
+     }
+     #article-verdict.unreliable {
+      background-color: rgb(255,0,0);
+     }
+
      #article-verdict-explanation {
       width: 100%;
       text-align: center;
       padding-top: 8px;
+      padding-bottom: 8px;
       font-size: 12px;
      }
 
@@ -190,14 +199,26 @@
         <i class="fa fa-star" aria-hidden="true"></i>
         <i class="fa fa-star" aria-hidden="true"></i>
         <i class="fa fa-star-o" aria-hidden="true"></i>
+        <div style = 'font-size: 13px'>Source Reputation: 4/5</div>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star-o" aria-hidden="true"></i>
+        <div style = 'font-size: 13px'>Newbie's Algorithm Score: 4/5</div>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star-o" aria-hidden="true"></i>
         </div>
         <div id = 'article-verdict'>
-          <div style = 'font-size: 13px'><b>Newbie's</b> Ranking:</div>
-          <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <span class = 'verdict-text caution'>CAUTION</span>
+          <div style = 'font-size: 13px; margin-top: 20px; margin-bottom: 10px;'><b>Newbie's</b> Verdict:</div>
+          <i class="fa" id="verdict-icon" aria-hidden="true"></i><br><span id ="verdict-title"></span>
         </div>
         <div class = 'clear'></div>
         <div id = 'article-verdict-explanation'>
-          Based on XYZ reviews and Newbie's algorithm, we advise you to read carefully and not to trust blindly this article.
+          Based on XYZ reviews and Newbie's algorithm, <span id = 'explanation-text'>we advise you to read carefully and not to trust blindly this article.</span>
         </div>
       </div>
     </div>
