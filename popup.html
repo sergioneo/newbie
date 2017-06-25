@@ -176,6 +176,29 @@
       clear: both;
     }
 
+    .go_to_rating {
+      width: 100%;
+      text-align: center;
+      background-color: transparent;
+      border: 0;
+      text-transform: uppercase;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      outline: none;
+      font-size: 13px;
+      color: #0575E6;
+      cursor: pointer;
+    }
+
+    #article-loading {
+      width: 100%;
+      background-color: rgb(245,245,245);
+      box-sizing: border-box;
+      padding-top: 20px;
+      text-align: center;
+      font-size: 18px;
+    }
+
   </style>
 
 </head>
@@ -191,26 +214,27 @@
       <div id='article-description'>
         Description provided by the website in their meta-data. This is the meta-data that facebook uses. Description provided by the website in their meta-data. This is the meta-data that facebook uses. Description provided by the website in their meta-data. This is the meta-data that facebook uses.
       </div>
-      <div id='article-summary'>
+      <div id ='article-loading'>
+        <span id = 'load'><img src = 'loading.gif' style = 'height: 18px; margin-right: 5px;' /> Loading</span>
+        <form method = 'get' action = 'http://newbieapp.herokuapp.com/rate' target = '_blank' style = 'display: none;' id = 'unknown-form'>
+          <input type = 'text' name = 'url' value = '' class = 'form-url' style = 'display: none'/>
+          <input type = 'text' name = 'title' value = '' class = 'form-title' style = 'display: none'/>
+          <input type = 'text' name = 'description' value = '' class = 'form-description' style = 'display: none'/>
+          <input type = 'text' name = 'image' value = '' class = 'form-image' style = 'display: none'/>
+          <button class = 'go_to_rating'>help others by<br>rating this article</button>
+        </form>
+      </div>
+      <div id='article-summary' style = 'display: none;'>
         <div id = 'article-readers-eval'>
-        <div style = 'font-size: 13px'><b>Readers'</b> Evaluation: 4/5</div>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star-o" aria-hidden="true"></i>
-        <div style = 'font-size: 13px'>Source Reputation: 4/5</div>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star-o" aria-hidden="true"></i>
-        <div style = 'font-size: 13px'>Newbie's Algorithm Score: 4/5</div>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star-o" aria-hidden="true"></i>
+        <div style = 'font-size: 13px'><b>Readers'</b> Evaluation: <span id = 'eval-text'></span>/5</div>
+        <div id = 'eval-stars'>
+        </div>
+        <div style = 'font-size: 13px'>Source Reputation: <span id = 'source-text'></span>/5</div>
+        <div id = 'source-stars'>
+        </div>
+        <div style = 'font-size: 13px'>Newbie's Algorithm Score: <span id = 'newbie-text'></span>/5</div>
+        <div id = 'newbie-stars'>
+        </div>
         </div>
         <div id = 'article-verdict'>
           <div style = 'font-size: 13px; margin-top: 20px; margin-bottom: 10px;'><b>Newbie's</b> Verdict:</div>
@@ -218,8 +242,15 @@
         </div>
         <div class = 'clear'></div>
         <div id = 'article-verdict-explanation'>
-          Based on XYZ reviews and Newbie's algorithm, <span id = 'explanation-text'>we advise you to read carefully and not to trust blindly this article.</span>
+          Based on the reviews and Newbie's algorithm, <span id = 'explanation-text'>we advise you to read carefully and not to trust blindly this article.</span>
         </div>
+        <form method = 'get' action = 'http://newbieapp.herokuapp.com/rate' target = '_blank'>
+          <input type = 'text' name = 'url' value = '' class = 'form-url' style = 'display: none'/>
+          <input type = 'text' name = 'title' value = '' class = 'form-title' style = 'display: none'/>
+          <input type = 'text' name = 'description' value = '' class = 'form-description' style = 'display: none'/>
+          <input type = 'text' name = 'image' value = '' class = 'form-image' style = 'display: none'/>
+          <button class = 'go_to_rating'>help others by<br>rating this article</button>
+        </form>
       </div>
     </div>
     <div id='not-available'>
